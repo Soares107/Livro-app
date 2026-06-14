@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
+# 📱 App Livros — React Native com Expo
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo mobile para gerenciamento de livros desenvolvido com **React Native + Expo**.
 
-## Get started
+## 🚀 Instalação e Execução
 
-1. Install dependencies
+### Pré-requisitos
+- Node.js >= 18
+- App **Expo Go** instalado no celular
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### Passos
 
 ```bash
-npm run reset-project
+# Clone o repositório
+git clone <url-do-repositorio>
+cd livro-app
+
+# Instale as dependências
+npm install
+
+# Inicie o projeto
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Escaneie o QR code com o **Expo Go** (Android) ou câmera (iOS).
 
-## Learn more
+> ⚠️ **Importante:** O celular e o computador devem estar na mesma rede Wi-Fi.
+> Altere o IP em `services/api.ts`:
+> ```ts
+> const BASE_URL = 'http://SEU_IP_LOCAL:3000';
+> ```
+> Para ver seu IP rode `ipconfig` no terminal.
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## ✨ Funcionalidades
 
-## Join the community
+- 📋 Listagem de todos os livros
+- ➕ Cadastro de novo livro
+- ✏️ Edição de livro existente
+- 🗑️ Remoção com confirmação
+- ✅ Marcação de lido/não lido
+- 🔄 Pull-to-refresh
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🗂️ Estrutura do Projeto
+
+```
+livro-app/
+├── app/
+│   ├── (tabs)/
+│   │   └── index.tsx    ← lista de livros
+│   └── modal.tsx        ← cadastro e edição
+├── services/
+│   └── api.ts           ← comunicação com o backend
+├── package.json
+└── README.md
+```
